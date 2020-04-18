@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    x:Class="ReactiveDataGridTest.Ressources.DataGridControl">
+
+    <DataGrid ItemsSource="{Binding TargetCollection}" 
+              x:Key="MainTracingDataGrid"
+            x:Name="TracingDataGrid"
+            ScrollViewer.ScrollChanged="TracingDataGrid_ScrollChanged"
+            EnableRowVirtualization="True"
+            RowHeight="40"
+            AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Timestamp" Binding="{Binding TimeStamp}"/>
+            <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+            <DataGridTextColumn Header="Data" Binding="{Binding HexData}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+
+    <!--<ListView x:Key="MainTracingDataGrid" ItemsSource="{Binding TargetCollection}" 
+              VirtualizingStackPanel.IsVirtualizing="True"
+              VirtualizingStackPanel.VirtualizationMode="Recycling">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Timestamp" DisplayMemberBinding="{Binding TimeStamp}"/>
+                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                <GridViewColumn Header="Data" DisplayMemberBinding="{Binding HexData}"/>
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+
+
+</ResourceDictionary>
